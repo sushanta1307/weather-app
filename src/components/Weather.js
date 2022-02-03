@@ -49,14 +49,14 @@ function Weather() {
                 d.setTime(obj.dt*1000);
                 var bg;
                 if(obj.weather[0].main === "Rain"){
-                  bg = "../image/rainy-weather.jpg";
+                  bg = "image/rainy-weather.jpg";
                 }
                 else if(obj.weather[0].main === 'Clouds')
                 {
-                  bg = "../image/cloudy-weather.jpg";
+                  bg = "image/cloudy-weather.jpg";
                 }
                 else{
-                  bg = "../image/clear-weather.jpg";
+                  bg = "image/clear-weather.jpg";
                 }
                 return(
                   <div key={obj.dt}  style = {{ background: `url(${bg}) center center/cover no-repeat`, backgroundSize: '100% 100%', color: 'white' }} >
