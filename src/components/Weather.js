@@ -4,7 +4,7 @@ function Weather() {
 
   const day = ["Monday" , "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const [latitude, setLatitude] = useState(50);
+  const [latitude, setLatitude] = useState(0);
   const [longitude, setLongitude] = useState(0);
   const [place, setPlace] = useState("");
   const [results, setResults] = useState([]);
@@ -24,7 +24,6 @@ function Weather() {
     const setPosition = position =>{
       setLatitude(position.coords.latitude);      
       setLongitude(position.coords.longitude);      
-
     }
     navigator.geolocation.getCurrentPosition(setPosition);
   },[])
@@ -39,6 +38,7 @@ function Weather() {
     },[latitude, longitude])
   return (
       <div>
+          <img src='image/weather.png' alt='Logo'/>
           <label htmlFor="place">Enter the name of the place</label><br />
           <input type="text" value={place} onChange={e=>{setPlace(e.target.value)}}/> <br/> 
           <button type="submit" className='btn' onClick={handleChange}>Submit</button>

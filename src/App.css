@@ -6,6 +6,12 @@
 body{
   background-color: #00b8ff;
 }
+div > img{
+  position: absolute;
+  left: 10%;
+  width: 100px;
+  height: auto;
+}
 .App {
   text-align: center;
 }
