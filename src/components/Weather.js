@@ -31,11 +31,11 @@ function Weather() {
   useEffect(()=>{
       axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely,alerts,current&units=metric&appid=${apiKey}`)
       .then(res=>{
-          setResults(res.data.daily)
-        })
-        .catch(err=>{
-          console.log(err);
-        })
+        setResults(res.data.daily)
+      })
+      .catch(err=>{
+        console.log(err);
+      })
     },[latitude, longitude])
   return (
       <div>
@@ -47,8 +47,19 @@ function Weather() {
               results.map(obj => {
                 var d = new Date();
                 d.setTime(obj.dt*1000);
+                var bg;
+                if(obj.weather[0].main === "Rain"){
+                  bg = "../image/rainy-weather.jpg";
+                }
+                else if(obj.weather[0].main === 'Clouds')
+                {
+                  bg = "../image/cloudy-weather.jpg";
+                }
+                else{
+                  bg = "../image/clear-weather.jpg";
+                }
                 return(
-                  <div key={obj.dt}>
+                  <div key={obj.dt}  style = {{ background: `url(${bg}) center center/cover no-repeat`, backgroundSize: '100% 100%', color: 'white' }} >
                     <h1>{d.getDate()} {month[d.getMonth()]} {d.getFullYear()}-{day[d.getDay()]}</h1>
                     <br />
                     <p>min Temp: {obj.temp.min} &#8451;</p>                  

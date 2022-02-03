@@ -17,12 +17,13 @@ body{
 }
 .report > div{
   background-color: rgb(103 202 248);
+  z-index: 1;
   border: 1px solid black;
   border-radius: 5px;
   min-width: 23%;
   min-height: 250px;
   margin: 25px auto;
-  box-shadow: cadetblue 20px 20px;
+  box-shadow: rgb(58, 128, 214) 15px 15px;
 }
 .report div p{
   font-size: 22px;
@@ -39,7 +40,7 @@ input{
   border: 1px solid rgb(55, 52, 71);
   border-radius: 10px;
   padding: 2px 45px;
-  background: url('./components/image/search.png') left no-repeat;
+  background: url('../public/image/search.png') left no-repeat;
   background-size: auto 40px;
   font-size: 22px;
 }
