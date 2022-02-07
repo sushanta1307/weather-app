@@ -1,5 +1,7 @@
 # Weekly Weather Forecast
 
+![Logo](/public/image/weather.png)
+
 ## Description
 
 The website helps the users to get the current weather as well as the weather forecast for the whole week.
